@@ -1,45 +1,51 @@
 package com.ee.fizzbuzz.converter;
 
-import static com.ee.fizzbuzz.Constants.BUZZ;
-import static com.ee.fizzbuzz.Constants.FIZZ;
-import static com.ee.fizzbuzz.Constants.FIZZBUZZ;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.ee.fizzbuzz.domain.TransformedOperand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 
 public class OperandConverterTest {
 
   private OperandConverter subjectUnderTest;
 
+
   @BeforeEach
   public void setUp() {
     this.subjectUnderTest = new OperandConverter();
   }
 
-  @Test
-  public void shouldGetFizzBuzzIfNumberIsAMultipleOf3And5() {
-    assertThat(this.subjectUnderTest.convert(15))
-        .isEqualTo(TransformedOperand.create(FIZZBUZZ));
+  @ParameterizedTest
+  @MethodSource("com.ee.fizzbuzz.fixture.FizzBuzzFixture#multiplesOf15")
+  public void multiplesOf15(final int input, final TransformedOperand result) {
+    assertThat(this.subjectUnderTest.convert(input))
+        .isEqualTo(result);
   }
 
-  @Test
-  public void shouldGetFizzIfNumberIsAMultipleOf3() {
-    assertThat(this.subjectUnderTest.convert(6))
-        .isEqualTo(TransformedOperand.create(FIZZ));
+  @ParameterizedTest
+  @MethodSource("com.ee.fizzbuzz.fixture.FizzBuzzFixture#multiplesOf5")
+  public void multiplesOf5(final int input, final TransformedOperand result) {
+    assertThat(this.subjectUnderTest.convert(input))
+        .isEqualTo(result);
   }
 
-  @Test
-  public void shouldGetBuzzIfNumberIsAMultipleOf5() {
-    assertThat(this.subjectUnderTest.convert(10))
-        .isEqualTo(TransformedOperand.create(BUZZ));
+  @ParameterizedTest
+  @MethodSource("com.ee.fizzbuzz.fixture.FizzBuzzFixture#multiplesOf3")
+  public void multiplesOf3(final int input, final TransformedOperand result) {
+    assertThat(this.subjectUnderTest.convert(input))
+        .isEqualTo(result);
   }
 
-  @Test
-  public void shoudGetNumberIfNumberIsNeitherAMultipleOf3Or5() {
-    assertThat(this.subjectUnderTest.convert(7)).isEqualTo(TransformedOperand.create("7"));
+  @ParameterizedTest
+  @MethodSource("com.ee.fizzbuzz.fixture.FizzBuzzFixture#numbers")
+  public void numbers(final int input, final TransformedOperand result) {
+    assertThat(this.subjectUnderTest.convert(input))
+        .isEqualTo(result);
   }
+
   
 }
