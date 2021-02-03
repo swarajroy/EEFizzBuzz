@@ -1,11 +1,11 @@
-package com.ee.fizzbuzz.viewmodel;
+package com.equalexperts.fb.viewmodel;
 
 
-import static com.ee.fizzbuzz.Constants.SPACE_DELIMETER;
+import static com.equalexperts.fb.Constants.SPACE_DELIMETER;
 import static java.util.Collections.emptyList;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.ee.fizzbuzz.domain.TransformedOperand;
+import com.equalexperts.fb.domain.TransformedOperand;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

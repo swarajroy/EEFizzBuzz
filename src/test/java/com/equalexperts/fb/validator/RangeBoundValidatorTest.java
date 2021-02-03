@@ -1,4 +1,4 @@
-package com.ee.fizzbuzz.validator;
+package com.equalexperts.fb.validator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

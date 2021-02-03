@@ -1,4 +1,4 @@
-package com.ee.fizzbuzz;
+package com.equalexperts.fb;
 
 public class Constants {
     public static final String SPACE_DELIMETER = " ";

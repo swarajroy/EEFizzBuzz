@@ -1,14 +1,14 @@
-package com.ee.fizzbuzz.transformer;
+package com.equalexperts.fb.transformer;
 
-import static com.ee.fizzbuzz.Constants.MESSAGE;
-import static com.ee.fizzbuzz.fixture.FizzBuzzFixture.EXPECTED_STRING_STEP_1;
+import static com.equalexperts.fb.Constants.MESSAGE;
+import static com.equalexperts.fb.fixture.FizzBuzzFixture.EXPECTED_STRING_STEP_1;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-import com.ee.fizzbuzz.converter.OperandConverter;
-import com.ee.fizzbuzz.tranformer.FizzBuzzTransformer;
-import com.ee.fizzbuzz.validator.RangeBoundValidator;
-import com.ee.fizzbuzz.viewmodel.TransformationResult;
+import com.equalexperts.fb.converter.OperandConverter;
+import com.equalexperts.fb.tranformer.FizzBuzzTransformer;
+import com.equalexperts.fb.validator.RangeBoundValidator;
+import com.equalexperts.fb.viewmodel.TransformationResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

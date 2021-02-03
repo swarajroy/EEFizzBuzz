@@ -1,4 +1,4 @@
-package com.ee.fizzbuzz.validator;
+package com.equalexperts.fb.validator;
 
 public class RangeBoundValidator {
     public boolean isValid(final int start, final int endInclusive) {

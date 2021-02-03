@@ -1,9 +1,9 @@
-package com.ee.fizzbuzz.viewmodel;
+package com.equalexperts.fb.viewmodel;
 
-import static com.ee.fizzbuzz.Constants.SPACE_DELIMETER;
+import static com.equalexperts.fb.Constants.SPACE_DELIMETER;
 import static java.util.stream.Collectors.toList;
 
-import com.ee.fizzbuzz.domain.TransformedOperand;
+import com.equalexperts.fb.domain.TransformedOperand;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Objects;

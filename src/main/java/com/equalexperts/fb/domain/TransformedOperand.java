@@ -1,4 +1,4 @@
-package com.ee.fizzbuzz.domain;
+package com.equalexperts.fb.domain;
 
 import java.util.Objects;
 

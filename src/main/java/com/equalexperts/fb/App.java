@@ -1,9 +1,9 @@
-package com.ee.fizzbuzz;
+package com.equalexperts.fb;
 
-import com.ee.fizzbuzz.converter.OperandConverter;
-import com.ee.fizzbuzz.viewmodel.TransformationResult;
-import com.ee.fizzbuzz.tranformer.FizzBuzzTransformer;
-import com.ee.fizzbuzz.validator.RangeBoundValidator;
+import com.equalexperts.fb.converter.OperandConverter;
+import com.equalexperts.fb.viewmodel.TransformationResult;
+import com.equalexperts.fb.tranformer.FizzBuzzTransformer;
+import com.equalexperts.fb.validator.RangeBoundValidator;
 
 /**
  *

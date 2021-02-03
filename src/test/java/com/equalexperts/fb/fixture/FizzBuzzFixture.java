@@ -1,7 +1,7 @@
-package com.ee.fizzbuzz.fixture;
+package com.equalexperts.fb.fixture;
 
-import com.ee.fizzbuzz.Constants;
-import com.ee.fizzbuzz.domain.TransformedOperand;
+import com.equalexperts.fb.Constants;
+import com.equalexperts.fb.domain.TransformedOperand;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 

@@ -1,10 +1,10 @@
-package com.ee.fizzbuzz.converter;
+package com.equalexperts.fb.converter;
 
-import static com.ee.fizzbuzz.Constants.BUZZ;
-import static com.ee.fizzbuzz.Constants.FIZZ;
-import static com.ee.fizzbuzz.Constants.FIZZBUZZ;
+import static com.equalexperts.fb.Constants.BUZZ;
+import static com.equalexperts.fb.Constants.FIZZ;
+import static com.equalexperts.fb.Constants.FIZZBUZZ;
 
-import com.ee.fizzbuzz.domain.TransformedOperand;
+import com.equalexperts.fb.domain.TransformedOperand;
 
 public class OperandConverter {
 

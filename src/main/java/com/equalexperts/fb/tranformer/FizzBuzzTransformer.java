@@ -1,13 +1,13 @@
-package com.ee.fizzbuzz.tranformer;
+package com.equalexperts.fb.tranformer;
 
-import com.ee.fizzbuzz.converter.OperandConverter;
-import com.ee.fizzbuzz.viewmodel.TransformationResult;
-import com.ee.fizzbuzz.validator.RangeBoundValidator;
+import com.equalexperts.fb.converter.OperandConverter;
+import com.equalexperts.fb.viewmodel.TransformationResult;
+import com.equalexperts.fb.validator.RangeBoundValidator;
 
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static com.ee.fizzbuzz.Constants.MESSAGE;
+import static com.equalexperts.fb.Constants.MESSAGE;
 import static java.util.stream.Collectors.toList;
 
 public final class FizzBuzzTransformer {
