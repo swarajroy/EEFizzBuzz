@@ -1,37 +1,39 @@
 package com.ee.fizzbuzz.viewmodel;
 
-import com.ee.fizzbuzz.domain.TransformedOperand;
-import org.junit.Test;
 
-import java.util.List;
-
+import static com.ee.fizzbuzz.Constants.SPACE_DELIMETER;
+import static java.util.Collections.emptyList;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TransformationResultTest {
+import com.ee.fizzbuzz.domain.TransformedOperand;
+import java.util.List;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-    @Test
-    public void shouldContainResultStringWithSpacesButNoLeadingAndTrailingSpaces() {
-        final TransformationResult input = TransformationResult.create(List.of(
-                TransformedOperand.create("1"),
-                TransformedOperand.create("2"),
-                TransformedOperand.create("3"))
-        );
+class TransformationResultTest {
 
-        final String result = input.getTransformedOperandString();
+  @Test
+  @DisplayName("Expect the result string to be empty when null input passed")
+  public void expectEmptyStringWhenNullPassed() {
+    assertThat(TransformationResult.create(null).getTransformedOperandString()).isBlank();
+  }
 
-        assertThat(result).isEqualTo("1 2 3");
-        assertThat(result).doesNotStartWith(" ");
-        assertThat(result).doesNotEndWith(" ");
-    }
+  @Test
+  @DisplayName("Expect the result string to be empty when empty input passed")
+  public void expectEmptyStringWhenWhenEmptyPassed() {
+    assertThat(TransformationResult.create(emptyList()).getTransformedOperandString()).isBlank();
+  }
 
-    @Test
-    public void shouldContainEmptyResultString() {
-        final TransformationResult result = TransformationResult.create(List.of());
+  @Test
+  @DisplayName("verify the result string to be equal to 1 2 with no leading or trailing spaces")
+  public void expectResultStringWhenCollectionEmptyWhenNullPassed() {
+    final String result = TransformationResult.create(List.of(
+        TransformedOperand.create("1"),
+        TransformedOperand.create("2")
+        )).getTransformedOperandString();
 
-        final String actualStr = result.getTransformedOperandString();
-
-        assertThat(actualStr).isEmpty();
-    }
-
-
+    assertThat(result).isEqualTo("1 2");
+    assertThat(result).doesNotStartWith(SPACE_DELIMETER);
+    assertThat(result).doesNotEndWith(SPACE_DELIMETER);
+  }
 }

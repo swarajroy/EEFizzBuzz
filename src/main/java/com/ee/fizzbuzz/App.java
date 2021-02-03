@@ -6,7 +6,8 @@ import com.ee.fizzbuzz.tranformer.FizzBuzzTransformer;
 import com.ee.fizzbuzz.validator.RangeBoundValidator;
 
 /**
- * Hello world!
+ *
+ * Entry point
  *
  */
 public class App {

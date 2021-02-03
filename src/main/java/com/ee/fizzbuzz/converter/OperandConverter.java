@@ -1,12 +1,12 @@
 package com.ee.fizzbuzz.converter;
 
+import static com.ee.fizzbuzz.Constants.BUZZ;
+import static com.ee.fizzbuzz.Constants.FIZZ;
+import static com.ee.fizzbuzz.Constants.FIZZBUZZ;
+
 import com.ee.fizzbuzz.domain.TransformedOperand;
 
-import static com.ee.fizzbuzz.Constants.*;
-
 public class OperandConverter {
-
-
 
   public TransformedOperand convert(final int operand) {
 

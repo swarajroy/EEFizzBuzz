@@ -1,39 +1,38 @@
 package com.ee.fizzbuzz.viewmodel;
 
-import com.ee.fizzbuzz.domain.TransformedOperand;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import static com.ee.fizzbuzz.Constants.SPACE_DELIMETER;
+import static java.util.stream.Collectors.toList;
+
+import com.ee.fizzbuzz.domain.TransformedOperand;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Objects;
 
 public final class TransformationResult {
-  private final List<TransformedOperand> transformedOperands;
-  private final String transformedOperandString;
+  private final Collection<TransformedOperand> transformedOperands;
 
-  private TransformationResult(final List<TransformedOperand> transformedOperands) {
+  private TransformationResult(final Collection<TransformedOperand> transformedOperands) {
     this.transformedOperands = transformedOperands;
-    this.transformedOperandString = String.join(SPACE_DELIMETER, getTransformedStringOperands()).trim();
   }
 
-  public static TransformationResult create(final List<TransformedOperand> transformedOperands) {
+  public static TransformationResult create(final Collection<TransformedOperand> transformedOperands) {
     return new TransformationResult(transformedOperands);
   }
 
-  private List<String> getTransformedStringOperands() {
-    return !this.transformedOperands.isEmpty() ? this.transformedOperands.stream().map(TransformedOperand::getValue).collect(Collectors.toList()) : Collections.emptyList();
+  private Collection<String> getTransformedStringOperands() {
+    return Objects.nonNull(this.transformedOperands) && !this.transformedOperands.isEmpty() ?
+        this.transformedOperands.stream().map(TransformedOperand::getValue).collect(
+        toList()): Collections.emptyList();
   }
 
   public String getTransformedOperandString() {
-    return transformedOperandString;
+    return String.join(SPACE_DELIMETER, getTransformedStringOperands()).trim();
   }
 
   @Override
   public String toString() {
     return "TransformationResult{" +
-            "transformedOperands=" + transformedOperands +
-            ", transformedOperandString='" + transformedOperandString + '\'' +
-            '}';
+        "transformedOperands=" + transformedOperands +
+        '}';
   }
 }

@@ -12,7 +12,6 @@ import static java.util.stream.Collectors.toList;
 
 public final class FizzBuzzTransformer {
 
-
   private final OperandConverter operandConverter;
   private final RangeBoundValidator rangeBoundValidator;
 
@@ -23,7 +22,7 @@ public final class FizzBuzzTransformer {
 
   public TransformationResult transform(final int start, final int endInclusive) {
     if (!rangeBoundValidator.isValid(start, endInclusive)) {
-      throw new IllegalArgumentException(MESSAGE);
+      throw new IndexOutOfBoundsException(MESSAGE);
     }
 
     return IntStream.rangeClosed(start, endInclusive)
