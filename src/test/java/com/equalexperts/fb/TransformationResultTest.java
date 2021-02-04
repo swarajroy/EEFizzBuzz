@@ -1,11 +1,10 @@
-package com.equalexperts.fb.viewmodel;
+package com.equalexperts.fb;
 
 
 import static com.equalexperts.fb.Constants.SPACE_DELIMETER;
 import static java.util.Collections.emptyList;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.equalexperts.fb.domain.TransformedOperand;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -28,8 +27,8 @@ class TransformationResultTest {
   @DisplayName("verify the result string to be equal to 1 2 with no leading or trailing spaces")
   public void expectResultStringWhenCollectionEmptyWhenNullPassed() {
     final String result = TransformationResult.create(List.of(
-        TransformedOperand.create("1"),
-        TransformedOperand.create("2")
+        "1",
+        "2"
         )).getTransformedOperandString();
 
     assertThat(result).isEqualTo("1 2");
