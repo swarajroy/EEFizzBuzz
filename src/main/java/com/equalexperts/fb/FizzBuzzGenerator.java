@@ -17,6 +17,6 @@ public final class FizzBuzzGenerator {
 
     return IntStream.rangeClosed(start, endInclusive)
             .mapToObj(operandConverter::convert)
-            .collect(Collectors.joining(SPACE_DELIMETER));
+            .collect(Collectors.joining(SPACE_DELIMETER)).trim();
   }
 }
