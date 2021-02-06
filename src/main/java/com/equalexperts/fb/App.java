@@ -1,14 +1,9 @@
 package com.equalexperts.fb;
 
-/**
- *
- * Entry point
- *
- */
-public class App {
+public final class App {
     public static void main( String[] args ) {
-        final FizzBuzzTransformer transformer = new FizzBuzzTransformer(new OperandConverter());
-        final TransformationResult result = transformer.transform(1, 20);
-        System.out.println(result.getTransformedOperandString());
+        final FizzBuzzGenerator transformer = new FizzBuzzGenerator(new OperandConverter());
+        final String result = transformer.transform(1, 20);
+        System.out.println(result);
     }
 }

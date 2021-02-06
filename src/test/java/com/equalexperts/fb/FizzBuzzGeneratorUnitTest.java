@@ -14,26 +14,27 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class FizzBuzzTransformerTest {
+public class FizzBuzzGeneratorUnitTest {
 
-    private FizzBuzzTransformer subjectUnderTest;
+    private FizzBuzzGenerator subjectUnderTest;
 
     @Mock
     private OperandConverter operandConverter;
 
     @BeforeEach
     public void setUp() {
-        this.subjectUnderTest = new FizzBuzzTransformer(operandConverter);
+        this.subjectUnderTest = new FizzBuzzGenerator(operandConverter);
     }
 
     @Test
-    @DisplayName("Should expect result to be non null and verify calls to operand converter")
+    @DisplayName("Should expect result to be present and verify calls to operand converter")
     public void expectCallsToOperandConverter() {
         when(operandConverter.convert(anyInt())).thenReturn("1").thenReturn("2");
 
-        final TransformationResult result = this.subjectUnderTest.transform(1, 2);
+        final String result = this.subjectUnderTest.transform(1, 2);
 
-        assertThat(result).isNotNull();
+        assertThat(result).isNotBlank();
+        assertThat(result).isEqualTo("1 2");
         verify(operandConverter, times(2)).convert(anyInt());
     }
 }

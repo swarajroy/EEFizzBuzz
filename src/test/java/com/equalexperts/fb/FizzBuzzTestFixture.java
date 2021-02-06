@@ -3,8 +3,9 @@ package com.equalexperts.fb;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
-public class FizzBuzzFixture {
-    public static final String EXPECTED_STRING_STEP_1 = "1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz 16 17 fizz 19 buzz";
+public class FizzBuzzTestFixture {
+    public static final String EXPECTED = "1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz 16 17 fizz 19 buzz";
+
     public static final String FIZZ = Constants.FIZZ;
     public static final String BUZZ = Constants.BUZZ;
     public static final String FIZZBUZZ = Constants.FIZZBUZZ;
