@@ -1,5 +1,9 @@
 package com.equalexperts.fb;
 
+import static com.equalexperts.fb.Constants.BUZZ;
+import static com.equalexperts.fb.Constants.FIZZ;
+import static com.equalexperts.fb.Constants.FIZZBUZZ;
+
 import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
