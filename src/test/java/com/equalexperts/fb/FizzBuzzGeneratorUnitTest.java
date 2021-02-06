@@ -32,12 +32,14 @@ public class FizzBuzzGeneratorUnitTest {
     public void expectCallsToOperandConverter() {
         when(operandConverter.convert(anyInt())).thenReturn("1").thenReturn("2");
 
-        final String result = this.subjectUnderTest.transform(1, 2);
+        final TransformedResult result = this.subjectUnderTest.transform(1, 2);
 
-        assertThat(result).isNotBlank();
-        assertThat(result).isEqualTo("1 2");
-        assertThat(result).doesNotStartWith(SPACE_DELIMETER);
-        assertThat(result).doesNotEndWith(SPACE_DELIMETER);
+        assertThat(result).isNotNull();
+        final String actual = result.getValue();
+        assertThat(actual).isNotBlank();
+        assertThat(actual).isEqualTo("1 2");
+        assertThat(actual).doesNotStartWith(SPACE_DELIMETER);
+        assertThat(actual).doesNotEndWith(SPACE_DELIMETER);
 
         verify(operandConverter, times(2)).convert(anyInt());
     }
