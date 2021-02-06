@@ -10,9 +10,16 @@ import static com.equalexperts.fb.Constants.SPACE_DELIMETER;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.function.Predicate;
 import org.apache.commons.lang3.StringUtils;
 
 public final class TransformedResult {
+
+  private static final Predicate<String> LUCKY_PREDICATE = value -> value.equals(LUCKY);
+  private static final Predicate<String> FIZZ_PREDICATE = value -> value.equals(FIZZ);
+  private static final Predicate<String> BUZZ_PREDICATE = value -> value.equals(BUZZ);
+  private static final Predicate<String> FIZZBUZZ_PREDICATE = value -> value.equals(FIZZBUZZ);
+  private static final Predicate<String> NUMBER_PREDICATE = StringUtils::isNumeric;
 
   private final Collection<String> values;
 
@@ -29,19 +36,34 @@ public final class TransformedResult {
   }
 
 
-  public TransformedResult buildReport() {
-    final long luckyCount = this.values.stream().filter(operand -> operand.equals(LUCKY)).count();
-    final long fizzCount = this.values.stream().filter(operand -> operand.equals(FIZZ)).count();
-    final long buzzCount = this.values.stream().filter(operand -> operand.equals(BUZZ)).count();
-    final long fizzBuzzCount = this.values.stream().filter(operand -> operand.equals(FIZZBUZZ)).count();
-    final long numberCount = this.values.stream().filter(StringUtils::isNumeric).count();
+  private String getMetricString() {
+    final long luckyCount = getCountOn(LUCKY_PREDICATE);
+    final long fizzCount = getCountOn(FIZZ_PREDICATE);
+    final long buzzCount = getCountOn(BUZZ_PREDICATE);
+    final long fizzBuzzCount = getCountOn(FIZZBUZZ_PREDICATE);
+    final long numberCount = getCountOn(NUMBER_PREDICATE);
 
-    this.values.add(FIZZ.concat(COLON_DELIMETER).concat(SPACE_DELIMETER).concat(String.valueOf(fizzCount)));
-    this.values.add(BUZZ.concat(COLON_DELIMETER).concat(SPACE_DELIMETER).concat(String.valueOf(buzzCount)));
-    this.values.add(FIZZBUZZ.concat(COLON_DELIMETER).concat(SPACE_DELIMETER).concat(String.valueOf(fizzBuzzCount)));
-    this.values.add(LUCKY.concat(COLON_DELIMETER).concat(SPACE_DELIMETER).concat(String.valueOf(luckyCount)));
-    this.values.add(INTEGER.concat(COLON_DELIMETER).concat(SPACE_DELIMETER).concat(String.valueOf(numberCount)));
+    final String fizzMetric = buildMetricUnit(FIZZ, fizzCount);
+    final String buzzMetric = buildMetricUnit(BUZZ, buzzCount);
+    final String fizzBuzzMetric = buildMetricUnit(FIZZBUZZ, fizzBuzzCount);
+    final String luckyMetric = buildMetricUnit(LUCKY, luckyCount);
+    final String numberMetric = buildMetricUnit(INTEGER, numberCount);
 
-    return this;
+    return String.join(SPACE_DELIMETER, fizzMetric, buzzMetric, fizzBuzzMetric, luckyMetric, numberMetric);
+
+  }
+
+  public String getValueAndMetricString() {
+    return getValue().concat(SPACE_DELIMETER).concat(getMetricString()).trim();
+  }
+
+  private String buildMetricUnit(final String key, final long value) {
+    return key.concat(COLON_DELIMETER).concat(SPACE_DELIMETER).concat(String.valueOf(value));
+  }
+
+  private long getCountOn(final Predicate<String> criteria) {
+    return this.values.stream().filter(criteria).count();
   }
 }
+
+

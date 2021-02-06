@@ -1,15 +1,14 @@
 package com.equalexperts.fb;
 
-import static com.equalexperts.fb.Constants.BUZZ;
-import static com.equalexperts.fb.Constants.FIZZ;
-import static com.equalexperts.fb.Constants.FIZZBUZZ;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
 public class FizzBuzzTestFixture {
+
+    public static final String EXPECTED = "1 2";
+    public static final String EXPECTED_VALUE = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz fizz: 4 buzz: 3 fizzbuzz: 1 lucky: 2 integer: 10";
 
     public static Stream<Arguments> multiplesOf3() {
         return Stream.of(

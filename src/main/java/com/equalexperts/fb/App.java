@@ -5,8 +5,7 @@ public final class App {
         final FizzBuzzGenerator transformer = new FizzBuzzGenerator(new OperandConverter(new NumberUtils()));
 
         final TransformedResult result = transformer.transform(1, 20);
-        result.buildReport();
 
-        System.out.println(result.getValue());
+        System.out.println(result.getValueAndMetricString());
     }
 }
