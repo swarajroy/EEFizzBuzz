@@ -16,11 +16,14 @@ public class FizzBuzzGeneratorTest {
     }
 
     @Test
-    @DisplayName("Should do the fizz buzz transformation and print result")
-    public void expectTransformedStringWithFizz_Buzz_FizzBuzzAndNumbers() {
+    @DisplayName("Should do the fizz buzz transformation build report and print result")
+    public void expectTransformedStringWithLucky_Fizz_Buzz_FizzBuzzAndNumbers_And_ReportMetrics() {
 
-        final TransformedResult result = this.subjectUnderTest.transform(1, 20);
+        final TransformedResult result = this.subjectUnderTest.transform(1, 20).buildReport();
+
         assertThat(result).isNotNull();
-        System.out.println(result);
+
+        System.out.println(result.getValue());
+
     }
 }

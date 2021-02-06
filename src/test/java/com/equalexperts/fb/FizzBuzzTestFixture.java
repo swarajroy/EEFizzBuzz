@@ -4,6 +4,8 @@ import static com.equalexperts.fb.Constants.BUZZ;
 import static com.equalexperts.fb.Constants.FIZZ;
 import static com.equalexperts.fb.Constants.FIZZBUZZ;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
@@ -62,5 +64,33 @@ public class FizzBuzzTestFixture {
             Arguments.of(30, true),
             Arguments.of(33, true)
         );
+    }
+
+    public static final TransformedResult TRANSFORMED_RESULT = TransformedResult.create(getValues());
+
+    private static List<String> getValues() {
+        final List<String> values = new ArrayList<>();
+        values.add("1");
+        values.add("2");
+        values.add("lucky");
+        values.add("4");
+        values.add("buzz");
+        values.add("fizz");
+        values.add("7");
+        values.add("8");
+        values.add("fizz");
+        values.add("buzz");
+
+        values.add("11");
+        values.add("fizz");
+        values.add("lucky");
+        values.add("14");
+        values.add("fizzbuzz");
+        values.add("16");
+        values.add("17");
+        values.add("fizz");
+        values.add("19");
+        values.add("buzz");
+        return values;
     }
 }
