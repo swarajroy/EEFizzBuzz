@@ -17,10 +17,10 @@ public class FizzBuzzGeneratorTest {
 
     @Test
     @DisplayName("Should do the fizz buzz transformation and print result")
-    public void expectTransformedStringWithFizz_Buzz_FizzBuzzAndNumbers() {
+    public void expectTransformedStringWithLucky_Fizz_Buzz_FizzBuzzAndNumbers() {
 
         final TransformedResult result = this.subjectUnderTest.transform(1, 20);
         assertThat(result).isNotNull();
-        System.out.println(result);
+        System.out.println(result.getValue());
     }
 }
