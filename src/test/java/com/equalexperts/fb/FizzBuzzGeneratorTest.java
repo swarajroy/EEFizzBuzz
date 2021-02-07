@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 
 public class FizzBuzzGeneratorTest {
 
+    private static final String EXPECTED = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz fizz: 4 buzz: 3 fizzbuzz: 1 lucky: 2 integer: 10";
+
     private FizzBuzzGenerator subjectUnderTest;
 
     @BeforeEach
@@ -16,13 +18,11 @@ public class FizzBuzzGeneratorTest {
     }
 
     @Test
-    @DisplayName("Should do the fizz buzz transformation build report and print result")
-    public void expectTransformedStringWithLucky_Fizz_Buzz_FizzBuzzAndNumbers_And_ReportMetrics() {
-
+    @DisplayName("Should do the fizz buzz transformation, check result not null, value is not blank and is equal to expected")
+    public void expectTransformedStringWithFizz_Buzz_FizzBuzzAndNumbers() {
         final String result = this.subjectUnderTest.transform(1, 20).getValueAndMetrics();
 
         assertThat(result).isNotBlank();
-
-        System.out.println(result);
+        assertThat(result).isEqualTo(EXPECTED);
     }
 }

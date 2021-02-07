@@ -1,5 +1,7 @@
 package com.equalexperts.fb;
 
+import java.util.Scanner;
+
 public class NumberUtils {
 
   public boolean contains3(int number) {
@@ -25,14 +27,11 @@ public class NumberUtils {
   }
 
   public static boolean isNumeric(final String operand) {
-    if (operand == null) {
+
+    if (operand == null || operand.isEmpty()) {
       return false;
     }
-    try {
-      Integer.parseInt(operand);
-    } catch (NumberFormatException nfe) {
-      return false;
-    }
-    return true;
+
+    return operand.chars().allMatch(Character::isDigit);
   }
 }

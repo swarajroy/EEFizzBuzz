@@ -7,10 +7,6 @@ import org.junit.jupiter.params.provider.Arguments;
 
 public class FizzBuzzTestFixture {
 
-    public static final String EXPECTED = "1 2";
-    public static final String EXPECTED_VALUE = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz fizz: 4 buzz: 3 fizzbuzz: 1 lucky: 2 integer: 10";
-    public static final String OPERAND_METRICS = "fizz: 4 buzz: 3 fizzbuzz: 1 lucky: 2 integer: 10";
-
     public static Stream<Arguments> multiplesOf3() {
         return Stream.of(
             Arguments.of(3, true),
@@ -87,6 +83,7 @@ public class FizzBuzzTestFixture {
     public static Stream<Arguments> isNumeric() {
         return Stream.of(
             Arguments.of(null, false),
+            Arguments.of("", false),
             Arguments.of("1", true),
             Arguments.of("2", true),
             Arguments.of("4", true),
@@ -95,31 +92,5 @@ public class FizzBuzzTestFixture {
         );
     }
 
-    public static final TransformedResult TRANSFORMED_RESULT = TransformedResult.create(getValues());
 
-    private static List<String> getValues() {
-        final List<String> values = new ArrayList<>();
-        values.add("1");
-        values.add("2");
-        values.add("lucky");
-        values.add("4");
-        values.add("buzz");
-        values.add("fizz");
-        values.add("7");
-        values.add("8");
-        values.add("fizz");
-        values.add("buzz");
-
-        values.add("11");
-        values.add("fizz");
-        values.add("lucky");
-        values.add("14");
-        values.add("fizzbuzz");
-        values.add("16");
-        values.add("17");
-        values.add("fizz");
-        values.add("19");
-        values.add("buzz");
-        return values;
-    }
 }
