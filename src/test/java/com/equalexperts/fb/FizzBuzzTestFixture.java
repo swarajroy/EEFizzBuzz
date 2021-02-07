@@ -16,7 +16,13 @@ public class FizzBuzzTestFixture {
             Arguments.of(6, true),
             Arguments.of(9, true),
             Arguments.of(12, true),
-            Arguments.of(18, true)
+            Arguments.of(18, true),
+
+            Arguments.of(2, false),
+            Arguments.of(20, false),
+            Arguments.of(35, false),
+            Arguments.of(43, false),
+            Arguments.of(41, false)
         );
     }
 
@@ -27,7 +33,13 @@ public class FizzBuzzTestFixture {
             Arguments.of(10, true),
             Arguments.of(20, true),
             Arguments.of(25, true),
-            Arguments.of(35, true)
+            Arguments.of(35, true),
+
+            Arguments.of(2, false),
+            Arguments.of(21, false),
+            Arguments.of(37, false),
+            Arguments.of(43, false),
+            Arguments.of(41, false)
         );
     }
 
@@ -38,7 +50,13 @@ public class FizzBuzzTestFixture {
             Arguments.of(30, true),
             Arguments.of(45, true),
             Arguments.of(60, true),
-            Arguments.of(75, true)
+            Arguments.of(75, true),
+
+            Arguments.of(32, false),
+            Arguments.of(21, false),
+            Arguments.of(43, false),
+            Arguments.of(42, false),
+            Arguments.of(53, false)
         );
     }
 

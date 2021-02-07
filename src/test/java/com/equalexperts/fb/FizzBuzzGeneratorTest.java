@@ -24,6 +24,5 @@ public class FizzBuzzGeneratorTest {
         assertThat(result).isNotBlank();
 
         System.out.println(result);
-
     }
 }
