@@ -20,6 +20,7 @@ public class FizzBuzzGeneratorTest {
     public void expectTransformedStringWithFizz_Buzz_FizzBuzzAndNumbers() {
         final TransformedResult result = this.subjectUnderTest.transform(1, 20);
         assertThat(result).isNotNull();
+        assertThat(result.getValue()).isNotBlank();
         System.out.println(result.getValue());
     }
 }
