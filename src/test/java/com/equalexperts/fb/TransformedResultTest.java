@@ -1,12 +1,13 @@
 package com.equalexperts.fb;
 
-import static com.equalexperts.fb.Constants.SPACE_DELIMETER;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class TransformedResultTest {
+
+  public static final String EXPECTED = "1 2";
 
   @Test
   public void expectEmptyStringWhenValuesNull() {
@@ -26,9 +27,8 @@ class TransformedResultTest {
   public void expectStringValuesWithSpacesWhenValuesPresent() {
     final TransformedResult result = TransformedResult.create(List.of("1", "2"));
     assertThat(result).isNotNull();
-    assertThat(result.getValue()).isEqualTo("1 2");
-    assertThat(result.getValue()).doesNotStartWith(SPACE_DELIMETER);
-    assertThat(result.getValue()).doesNotEndWith(SPACE_DELIMETER);
+    assertThat(result.getValue()).isNotBlank();
+    assertThat(result.getValue()).isEqualTo(EXPECTED);
   }
 
 }
