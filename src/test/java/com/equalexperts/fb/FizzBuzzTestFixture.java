@@ -65,6 +65,17 @@ public class FizzBuzzTestFixture {
         );
     }
 
+    public static Stream<Arguments> isNumeric() {
+        return Stream.of(
+            Arguments.of(null, false),
+            Arguments.of("1", true),
+            Arguments.of("2", true),
+            Arguments.of("4", true),
+            Arguments.of("lucky", false),
+            Arguments.of("23", true)
+        );
+    }
+
     public static final TransformedResult TRANSFORMED_RESULT = TransformedResult.create(getValues());
 
     private static List<String> getValues() {

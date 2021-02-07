@@ -39,4 +39,10 @@ public class NumberUtilsTest {
     assertThat(this.subjectUnderTest.multipleOf3(input)).isEqualTo(result);
   }
 
+  @ParameterizedTest
+  @MethodSource("com.equalexperts.fb.FizzBuzzTestFixture#isNumeric")
+  public void isNumeric(final String operand, final boolean result){
+    assertThat(NumberUtils.isNumeric(operand)).isEqualTo(result);
+  }
+
 }

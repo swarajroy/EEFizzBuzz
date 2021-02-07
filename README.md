@@ -15,5 +15,5 @@ The above class is provided to run the application from within the IDE and also 
 Steps to run from the command line:
 1. After unzipping the application navigate to the root folder of the project and run 'mvn clean install' from the command prompt
 2. Navigate to the target folder from your project root folder once completing step 1.
-3. Run the command from the command line 'java -cp EEFizzBuzz-1.0-SNAPSHOT-jar-with-dependencies.jar com.equalexperts.fb.App'
+3. Run the command from the command line 'java -cp EEFizzBuzz-1.0-SNAPSHOT.jar com.equalexperts.fb.App'
 

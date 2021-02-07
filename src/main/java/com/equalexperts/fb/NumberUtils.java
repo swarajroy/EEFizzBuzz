@@ -23,4 +23,16 @@ public class NumberUtils {
   public boolean multipleOf3(int number) {
     return number % 3 == 0;
   }
+
+  public static boolean isNumeric(final String operand) {
+    if (operand == null) {
+      return false;
+    }
+    try {
+      Integer.parseInt(operand);
+    } catch (NumberFormatException nfe) {
+      return false;
+    }
+    return true;
+  }
 }

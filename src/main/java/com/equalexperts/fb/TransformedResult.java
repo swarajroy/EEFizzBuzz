@@ -11,7 +11,6 @@ import static com.equalexperts.fb.Constants.SPACE_DELIMETER;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.function.Predicate;
-import org.apache.commons.lang3.StringUtils;
 
 public final class TransformedResult {
 
@@ -19,7 +18,8 @@ public final class TransformedResult {
   private static final Predicate<String> FIZZ_PREDICATE = value -> value.equals(FIZZ);
   private static final Predicate<String> BUZZ_PREDICATE = value -> value.equals(BUZZ);
   private static final Predicate<String> FIZZBUZZ_PREDICATE = value -> value.equals(FIZZBUZZ);
-  private static final Predicate<String> NUMBER_PREDICATE = StringUtils::isNumeric;
+  private static final Predicate<String> NUMBER_PREDICATE = NumberUtils::isNumeric;
+
 
   private final Collection<String> values;
 
