@@ -41,7 +41,7 @@ class TransformedResultTest {
   public void expectValueWithTransformationIntoFizz_Buzz_FizzBuzz_Lucky_Integer_And_Report_Of_Counts() {
     final TransformedResult input = TRANSFORMED_RESULT;
 
-    final String valueAndMetrics = input.getValueAndMetricString();
+    final String valueAndMetrics = input.getValueAndMetrics();
 
     assertThat(valueAndMetrics).isNotBlank();
     assertThat(valueAndMetrics).isEqualTo(EXPECTED_VALUE);

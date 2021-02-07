@@ -36,7 +36,7 @@ public final class TransformedResult {
   }
 
 
-  private String getMetricString() {
+  private String getMetrics() {
     final long luckyCount = getCountOn(LUCKY_PREDICATE);
     final long fizzCount = getCountOn(FIZZ_PREDICATE);
     final long buzzCount = getCountOn(BUZZ_PREDICATE);
@@ -53,8 +53,8 @@ public final class TransformedResult {
 
   }
 
-  public String getValueAndMetricString() {
-    return getValue().concat(SPACE_DELIMETER).concat(getMetricString()).trim();
+  public String getValueAndMetrics() {
+    return getValue().concat(SPACE_DELIMETER).concat(getMetrics()).trim();
   }
 
   private String buildMetricUnit(final String key, final long value) {

@@ -6,6 +6,6 @@ public final class App {
 
         final TransformedResult result = transformer.transform(1, 20);
 
-        System.out.println(result.getValueAndMetricString());
+        System.out.println(result.getValueAndMetrics());
     }
 }
