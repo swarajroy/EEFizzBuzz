@@ -46,7 +46,7 @@ public class OperandConverterTest {
   }
 
   @ParameterizedTest
-  @MethodSource("com.equalexperts.fb.FizzBuzzTestFixture#compound")
+  @MethodSource("com.equalexperts.fb.FizzBuzzTestFixture#compoundInput")
   public void compound(final int input, final String result) {
     assertThat(this.subjectUnderTest.convert(input))
         .isEqualTo(result);

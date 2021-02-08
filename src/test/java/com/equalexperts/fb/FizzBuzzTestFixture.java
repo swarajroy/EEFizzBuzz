@@ -1,13 +1,13 @@
 package com.equalexperts.fb;
 
-import static com.equalexperts.fb.Constants.BUZZ;
-import static com.equalexperts.fb.Constants.FIZZ;
-import static com.equalexperts.fb.Constants.FIZZBUZZ;
-
 import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
 public class FizzBuzzTestFixture {
+
+    private static final String FIZZBUZZ = "fizzbuzz";
+    private static final String FIZZ = "fizz";
+    private static final String BUZZ = "buzz";
 
     public static Stream<Arguments> multiplesOf3() {
         return Stream.of(
@@ -49,7 +49,7 @@ public class FizzBuzzTestFixture {
         );
     }
 
-    public static Stream<Arguments> compound() {
+    public static Stream<Arguments> compoundInput() {
         return Stream.of(
             Arguments.of(3, FIZZ),
             Arguments.of(30, FIZZBUZZ),
