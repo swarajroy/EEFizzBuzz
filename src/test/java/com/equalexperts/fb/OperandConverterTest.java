@@ -45,5 +45,11 @@ public class OperandConverterTest {
         .isEqualTo(result);
   }
 
+  @ParameterizedTest
+  @MethodSource("com.equalexperts.fb.FizzBuzzTestFixture#compound")
+  public void compound(final int input, final String result) {
+    assertThat(this.subjectUnderTest.convert(input))
+        .isEqualTo(result);
+  }
   
 }
