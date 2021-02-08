@@ -17,6 +17,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class FizzBuzzGeneratorUnitTest {
 
     public static final String EXPECTED = "1 2";
+
     private FizzBuzzGenerator subjectUnderTest;
 
     @Mock
@@ -37,7 +38,6 @@ public class FizzBuzzGeneratorUnitTest {
         assertThat(result).isNotNull();
         assertThat(result.getValue()).isNotBlank();
         assertThat(result.getValue()).isEqualTo(EXPECTED);
-
         verify(operandConverter, times(2)).convert(anyInt());
     }
 }

@@ -20,7 +20,6 @@ public final class TransformedResult {
   private static final Predicate<String> FIZZBUZZ_PREDICATE = value -> value.equals(FIZZBUZZ);
   private static final Predicate<String> NUMBER_PREDICATE = NumberUtils::isNumeric;
 
-
   private final Collection<String> values;
 
   private TransformedResult(final Collection<String> values) {

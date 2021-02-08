@@ -1,11 +1,14 @@
 package com.equalexperts.fb;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
 public class FizzBuzzTestFixture {
+
+    public static final String FIZZBUZZ = "fizzbuzz";
+    public static final String FIZZ = "fizz";
+    public static final String BUZZ = "buzz";
+    public static final String LUCKY = "lucky";
 
     public static Stream<Arguments> multiplesOf3() {
         return Stream.of(
@@ -77,6 +80,17 @@ public class FizzBuzzTestFixture {
             Arguments.of(29, false),
             Arguments.of(30, true),
             Arguments.of(33, true)
+        );
+    }
+
+    public static Stream<Arguments> compoundInput() {
+        return Stream.of(
+            Arguments.of(3, LUCKY),
+            Arguments.of(30, LUCKY),
+            Arguments.of(5, BUZZ),
+            Arguments.of(15, FIZZBUZZ),
+            Arguments.of(50, BUZZ),
+            Arguments.of(7, "7")
         );
     }
 
