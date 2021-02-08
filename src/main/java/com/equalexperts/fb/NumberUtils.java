@@ -1,7 +1,5 @@
 package com.equalexperts.fb;
 
-import java.util.Scanner;
-
 public class NumberUtils {
 
   public boolean contains3(int number) {

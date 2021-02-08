@@ -20,7 +20,6 @@ class TransformedResultTest {
       "8",
       "fizz",
       "buzz",
-
       "11",
       "fizz",
       "lucky",
