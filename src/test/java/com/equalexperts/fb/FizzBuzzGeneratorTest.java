@@ -19,7 +19,7 @@ public class FizzBuzzGeneratorTest {
 
     @Test
     @DisplayName("Should do the fizz buzz transformation, check result not null, value is not blank and is equal to expected")
-    public void expectTransformedStringWithFizz_Buzz_FizzBuzzAndNumbers() {
+    public void expectTransformedStringWithFizz_Buzz_FizzBuzzLuckyAndNumbers() {
         final TransformedResult result = this.subjectUnderTest.transform(1, 20);
 
         assertThat(result).isNotNull();

@@ -1,6 +1,5 @@
 package com.equalexperts.fb;
 
-import static com.equalexperts.fb.Constants.SPACE_DELIMETER;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.times;
@@ -18,6 +17,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class FizzBuzzGeneratorUnitTest {
 
     public static final String EXPECTED = "1 2";
+
     private FizzBuzzGenerator subjectUnderTest;
 
     @Mock
@@ -38,7 +38,6 @@ public class FizzBuzzGeneratorUnitTest {
         assertThat(result).isNotNull();
         assertThat(result.getValue()).isNotBlank();
         assertThat(result.getValue()).isEqualTo(EXPECTED);
-
         verify(operandConverter, times(2)).convert(anyInt());
     }
 }

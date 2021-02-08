@@ -1,11 +1,11 @@
 package com.equalexperts.fb;
 
-import static com.equalexperts.fb.Constants.BUZZ;
-import static com.equalexperts.fb.Constants.FIZZ;
-import static com.equalexperts.fb.Constants.FIZZBUZZ;
-import static com.equalexperts.fb.Constants.LUCKY;
-
 public class OperandConverter {
+
+  private static final String FIZZBUZZ = "fizzbuzz";
+  private static final String FIZZ = "fizz";
+  private static final String BUZZ = "buzz";
+  private static final String LUCKY = "lucky";
 
   private final NumberUtils numberUtils;
 

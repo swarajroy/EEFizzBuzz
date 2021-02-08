@@ -1,11 +1,11 @@
 package com.equalexperts.fb;
 
-import static com.equalexperts.fb.Constants.SPACE_DELIMETER;
-
 import java.util.Collection;
 import java.util.Collections;
 
 public final class TransformedResult {
+  public static final String SPACE_DELIMETER = " ";
+
   private final Collection<String> values;
 
   private TransformedResult(final Collection<String> values) {
